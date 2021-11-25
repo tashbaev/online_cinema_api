@@ -41,9 +41,10 @@ class CustomUser(AbstractUser):
     # is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
     activation_code = models.CharField(max_length=50, blank=True)
+    bio = models.CharField(max_length=300, null=True)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['username',]
 
     objects = MyUserManager()
 
