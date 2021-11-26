@@ -7,7 +7,7 @@ class Movie(models.Model):
     description = models.TextField()
     video = models.FileField(upload_to='videos/')
     upload_time = models.TimeField(auto_now_add=True)
-    favorites = models.ManyToManyField('cinema.Movie', related_name='favorite', blank=True)
+    favorites = models.ManyToManyField('account.CustomUser', related_name='favorite', blank=True)
 
 
 
