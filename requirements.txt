@@ -1,7 +1,8 @@
-Django
+Django==3.2.9
 psycopg2-binary
 Pillow
 djangorestframework
 python-decouple
 djangorestframework-simplejwt
 drf-yasg
+django-rest-passwordreset

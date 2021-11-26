@@ -10,7 +10,7 @@ class MyUserManager(BaseUserManager):
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
-        # user.create_activation_code()
+        user.create_activation_code()
         user.save(using=self._db)
         return user
 
@@ -57,5 +57,6 @@ class CustomUser(AbstractUser):
         encode_string = string.encode()
         md5_object = hashlib.md5(encode_string)
         activation_code = md5_object.hexdigest()
-        print(activation_code)
+        # print(activation_code)
         self.activation_code = activation_code
+
