@@ -5,6 +5,10 @@ from .models import CustomUser
 from .utils import send_activation_code
 
 
+class CustomTokenSerializer(serializers.Serializer):
+    token = serializers.CharField()
+
+
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(min_length=6, write_only=True)
     password_confirm = serializers.CharField(min_length=6, write_only=True)
