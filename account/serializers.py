@@ -30,7 +30,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         username = validated_data.get('username')
         user = CustomUser.objects.create_user(email=email, username=username, password=password)
         # print(f"COOOOooode:::: {user.activation_code}")
-        send_activation_code(email=user.email, activation_code=user.activation_code)
+        send_activation_code.delay(email=user.email, activation_code=user.activation_code)
         return user
 
 class LoginSerializer(serializers.Serializer):

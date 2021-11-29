@@ -64,5 +64,5 @@ def password_reset_token_created(sender, reset_password_token, *args, **kwargs):
         'reset_password_url': "http://localhost:8000/api/v1/account/password_reset/{}".format(reset_password_token.key),
     }
     print(context)
-    send_reset_code(context)
+    send_reset_code.delay(context)
 
