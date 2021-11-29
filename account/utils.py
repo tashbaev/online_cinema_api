@@ -16,7 +16,7 @@ def send_activation_code(email, activation_code):
 
 
 def send_reset_code(context):
-    reset_url = f"http://localhost:8000/api/v1/account/password_reset/{context.get('reset_code')}"
+    reset_url = context.get('reset_password_url')
     message = f"To reset password go through the link: {reset_url}"
     email_from = settings.EMAIL_HOST_USER
     # print(message)

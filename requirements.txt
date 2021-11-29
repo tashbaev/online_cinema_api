@@ -6,3 +6,4 @@ python-decouple
 djangorestframework-simplejwt
 drf-yasg
 django-rest-passwordreset
+django-filter

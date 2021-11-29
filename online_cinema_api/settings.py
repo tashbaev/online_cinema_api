@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     # libs
     'django_rest_passwordreset',
+    'django_filters',
 ]
 
 REST_FRAMEWORK = {
