@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     # libs
     'django_rest_passwordreset',
     'django_filters',
+    'drf_yasg',
 ]
 
 REST_FRAMEWORK = {
@@ -171,3 +172,9 @@ CELERY_TIMEZONE = 'Asia/Bishkek'
 
 BROKER_URL = 'redis://127.0.0.1:6379/0'
 BROKER_TRANSPORT = 'redis'
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
